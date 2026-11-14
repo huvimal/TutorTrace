@@ -1,0 +1,46 @@
+{
+  "retrieval": [
+    {
+      "question": "validation chọn mô hình",
+      "expected": "S1"
+    },
+    {
+      "question": "data leakage thời gian",
+      "expected": "S2"
+    },
+    {
+      "question": "precision recall",
+      "expected": "S3"
+    },
+    {
+      "question": "baseline dữ liệu giả lập",
+      "expected": "S4"
+    },
+    {
+      "question": "địa chất núi lửa",
+      "expected": null
+    }
+  ],
+  "grading": [
+    {
+      "exercise": "E1",
+      "answer": "Train học tham số. Validation chọn mô hình. Test đánh giá cuối cùng.",
+      "expected": 3
+    },
+    {
+      "exercise": "E2",
+      "answer": "Train ở quá khứ, test ở tương lai. Chỉ fit trên train.",
+      "expected": 2
+    },
+    {
+      "exercise": "E1",
+      "answer": "",
+      "expected": 0
+    },
+    {
+      "exercise": "E3",
+      "answer": "precision TP FP, recall TP FN, không đảm bảo",
+      "expected": 3
+    }
+  ]
+}

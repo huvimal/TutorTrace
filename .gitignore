@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.pyc
+private/
+reports/
+.env
+.streamlit/secrets.toml
+HUONG_DAN_DANG_DU_AN.md

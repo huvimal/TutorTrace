@@ -1,0 +1,189 @@
+{
+  "id": "ml-foundations-v1",
+  "title": "ML Foundations — tài liệu demo tự soạn",
+  "version": "1.0",
+  "passages": [
+    {
+      "id": "S1",
+      "title": "Train, validation và test",
+      "text": "Tập train dùng để học tham số. Tập validation dùng để chọn mô hình và siêu tham số. Tập test dùng để đánh giá cuối cùng sau khi đã chốt lựa chọn; không dùng test để chọn mô hình."
+    },
+    {
+      "id": "S2",
+      "title": "Data leakage và thời gian",
+      "text": "Data leakage xảy ra khi thông tin không có sẵn tại thời điểm dự đoán đi vào quá trình huấn luyện. Với chuỗi thời gian, hãy chia theo thời gian: train ở quá khứ, test ở tương lai. Bộ chuẩn hóa chỉ được fit trên tập train rồi áp dụng cho validation và test."
+    },
+    {
+      "id": "S3",
+      "title": "Precision và recall",
+      "text": "Precision = TP / (TP + FP), đo tỷ lệ dự đoán dương tính là đúng. Recall = TP / (TP + FN), đo tỷ lệ ca dương tính thực tế được tìm thấy. Precision cao không đảm bảo recall cao."
+    },
+    {
+      "id": "S4",
+      "title": "Baseline và đánh giá",
+      "text": "Baseline là phương pháp tham chiếu đơn giản. So sánh mô hình với baseline trên cùng tập test và cùng metric. Kết quả tốt trên dữ liệu giả lập không chứng minh hiệu quả trên dữ liệu thực tế."
+    }
+  ],
+  "exercises": [
+    {
+      "id": "E1",
+      "topic": "evaluation",
+      "prompt": "Nêu vai trò của train, validation và test. Vì sao không chọn mô hình bằng test?",
+      "rubric": [
+        {
+          "id": "train",
+          "label": "Train học tham số",
+          "concepts": [
+            [
+              "train"
+            ],
+            [
+              "học tham số",
+              "learn parameters"
+            ]
+          ],
+          "max_points": 1,
+          "source_id": "S1",
+          "quote": "Tập train dùng để học tham số."
+        },
+        {
+          "id": "validation",
+          "label": "Validation chọn mô hình",
+          "concepts": [
+            [
+              "validation"
+            ],
+            [
+              "chọn mô hình",
+              "select model"
+            ]
+          ],
+          "max_points": 1,
+          "source_id": "S1",
+          "quote": "Tập validation dùng để chọn mô hình và siêu tham số."
+        },
+        {
+          "id": "test",
+          "label": "Test đánh giá cuối cùng",
+          "concepts": [
+            [
+              "test"
+            ],
+            [
+              "đánh giá cuối cùng",
+              "final evaluation"
+            ]
+          ],
+          "max_points": 1,
+          "source_id": "S1",
+          "quote": "Tập test dùng để đánh giá cuối cùng sau khi đã chốt lựa chọn; không dùng test để chọn mô hình."
+        }
+      ]
+    },
+    {
+      "id": "E2",
+      "topic": "leakage",
+      "prompt": "Mô tả cách chia dữ liệu chuỗi thời gian và fit bộ chuẩn hóa để tránh leakage.",
+      "rubric": [
+        {
+          "id": "split",
+          "label": "Chia theo thời gian",
+          "concepts": [
+            [
+              "train"
+            ],
+            [
+              "quá khứ",
+              "past"
+            ],
+            [
+              "test"
+            ],
+            [
+              "tương lai",
+              "future"
+            ]
+          ],
+          "max_points": 1,
+          "source_id": "S2",
+          "quote": "Với chuỗi thời gian, hãy chia theo thời gian: train ở quá khứ, test ở tương lai."
+        },
+        {
+          "id": "fit",
+          "label": "Fit chỉ trên train",
+          "concepts": [
+            [
+              "fit"
+            ],
+            [
+              "chỉ",
+              "only"
+            ],
+            [
+              "train"
+            ]
+          ],
+          "max_points": 1,
+          "source_id": "S2",
+          "quote": "Bộ chuẩn hóa chỉ được fit trên tập train rồi áp dụng cho validation và test."
+        }
+      ]
+    },
+    {
+      "id": "E3",
+      "topic": "metrics",
+      "prompt": "Giải thích precision và recall; precision cao có đảm bảo recall cao không?",
+      "rubric": [
+        {
+          "id": "precision",
+          "label": "Precision",
+          "concepts": [
+            [
+              "precision"
+            ],
+            [
+              "tp"
+            ],
+            [
+              "fp"
+            ]
+          ],
+          "max_points": 1,
+          "source_id": "S3",
+          "quote": "Precision = TP / (TP + FP), đo tỷ lệ dự đoán dương tính là đúng."
+        },
+        {
+          "id": "recall",
+          "label": "Recall",
+          "concepts": [
+            [
+              "recall"
+            ],
+            [
+              "tp"
+            ],
+            [
+              "fn"
+            ]
+          ],
+          "max_points": 1,
+          "source_id": "S3",
+          "quote": "Recall = TP / (TP + FN), đo tỷ lệ ca dương tính thực tế được tìm thấy."
+        },
+        {
+          "id": "tradeoff",
+          "label": "Không suy ra recall cao",
+          "concepts": [
+            [
+              "không đảm bảo",
+              "does not guarantee"
+            ]
+          ],
+          "max_points": 1,
+          "source_id": "S3",
+          "quote": "Precision cao không đảm bảo recall cao."
+        }
+      ]
+    }
+  ]
+}
